@@ -28,7 +28,7 @@ our %argsrels_common = (
     req_one => [qw/login access_token/],
 );
 
-$SPEC{repo_exists} = {
+$SPEC{get_repo} = {
     v => 1.1,
 };
 sub repo_exists {

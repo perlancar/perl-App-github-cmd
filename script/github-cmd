@@ -1,0 +1,53 @@
+#!perl
+
+# DATE
+# VERSION
+
+use 5.010001;
+use strict;
+use warnings;
+
+use Perinci::CmdLine::github::cmd;
+
+my $prefix = '/App/github/cmd/';
+
+Perinci::CmdLine::github::cmd->new(
+    url => $prefix,
+    log => 1,
+    pass_cmdline_object => 1,
+    config_filename => ["github-cmd.conf"],
+    subcommands => {
+        'setup'       => {url => "${prefix}setup"},
+        'create-repo' => {url => "${prefix}create_repo"},
+        'delete-repo' => {url => "${prefix}delete_repo"},
+        'list-repos'  => {url => "${prefix}list_repos"},
+        'get-repo'    => {url => "${prefix}get_repo"},
+    },
+)->run;
+
+# ABSTRACT:
+# PODNAME:
+
+=head1 SYNOPSIS
+
+In F<~/.config/github-cmd.conf>:
+
+ login = YOUR_GITHUB_LOGIN
+ pass  = YOUR_GITHUB_PASSWORD
+
+ # or
+ token = YOUR_API_TOKEN
+
+
+=head1 DESCRIPTION
+
+B<EARLY RELEASE.>
+
+This is yet another Github CLI, written in Perl using the L<Perinci::CmdLine>
+framework and L<Net::GitHub::V3> API client.
+
+
+=head1 SEE ALSO
+
+L<App::ph> - another GitHub CLI written by TOKUHIROM. It is last released in
+2013 and only contains a few subcommands.
