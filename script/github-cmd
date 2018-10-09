@@ -17,11 +17,13 @@ Perinci::CmdLine::github::cmd->new(
     pass_cmdline_object => 1,
     config_filename => ["github-cmd.conf"],
     subcommands => {
-        'setup'       => {url => "${prefix}setup"},
+        'get-user'    => {url => "${prefix}get_user"},
+
+        'get-repo'    => {url => "${prefix}get_repo"},
+        'repo-exists' => {url => "${prefix}repo_exists"},
+        'list-repos'  => {url => "${prefix}list_repos"},
         'create-repo' => {url => "${prefix}create_repo"},
         'delete-repo' => {url => "${prefix}delete_repo"},
-        'list-repos'  => {url => "${prefix}list_repos"},
-        'get-repo'    => {url => "${prefix}get_repo"},
     },
 )->run;
 
@@ -30,18 +32,27 @@ Perinci::CmdLine::github::cmd->new(
 
 =head1 SYNOPSIS
 
+=head2 Setup
+
 In F<~/.config/github-cmd.conf>:
 
  login = YOUR_GITHUB_LOGIN
  pass  = YOUR_GITHUB_PASSWORD
 
  # or
- token = YOUR_API_TOKEN
+ access_token = YOUR_API_TOKEN
+
+or just run C<github-cmd>, which will prompt you login+pass and write them to
+configuration.
+
+=head2 User commands
+
+=head2 Repo commands
 
 
 =head1 DESCRIPTION
 
-B<EARLY RELEASE.>
+B<EARLY RELEASE. More commands coming soon.>
 
 This is yet another Github CLI, written in Perl using the L<Perinci::CmdLine>
 framework and L<Net::GitHub::V3> API client.
