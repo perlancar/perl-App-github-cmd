@@ -47,7 +47,25 @@ configuration.
 
 =head2 User commands
 
+ % github-cmd get-user
+ % github-cmd get-user perlancar
+
 =head2 Repo commands
+
+ % github-cmd list-repos
+ % github-cmd list-repos -l
+ % github-cmd list-repos --start 100
+
+ % github-cmd get-repo perl-App-github-cmd
+ % github-cmd get-repo --user perlancar perl-App-github-cmd
+
+ % github-cmd repo-exists perl-App-github-cmd
+ 1
+
+ % github-cmd repo-exists --user perlancar perl-App-github-cmd-FOO
+ 0
+
+ % github-cmd create-repo foo
 
 
 =head1 DESCRIPTION
