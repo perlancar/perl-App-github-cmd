@@ -181,12 +181,12 @@ sub create_repo {
     my $state = _init(\%args);
     my $github = $state->{github};
 
-    $github->repos->create(
+    my $repo = $github->repos->create({
         name => $args{repo},
         description => $args{description} // '(No description)',
         homepage    => $args{homepage} ? "$args{homepage}" : 'https://github.com',
-    );
-    [200, "OK"];
+    });
+    [200, "OK", $repo];
 }
 
 $SPEC{delete_repo} = {
