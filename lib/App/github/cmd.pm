@@ -135,7 +135,7 @@ sub repo_exists {
     };
     my $err = $@;
     my $exists = $err && $err =~ /Not Found/ ? 0 : 1;
-    [200, "OK", $exists];
+    [200, "OK", $exists, {'cmdline.exit_code' => $exists ? 0:1}];
 }
 
 $SPEC{list_repos} = {
