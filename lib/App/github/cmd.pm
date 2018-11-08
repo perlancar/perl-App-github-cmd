@@ -18,12 +18,15 @@ $SPEC{':package'} = {
 our %args_common = (
     login => {
         schema => 'str*',
+        tags => ['common'],
     },
     pass => {
         schema => 'str*',
+        tags => ['common'],
     },
     access_token => {
         schema => 'str*',
+        tags => ['common'],
     },
 );
 our %argsrels_common = (
