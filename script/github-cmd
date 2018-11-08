@@ -70,7 +70,7 @@ configuration.
 
 =head1 DESCRIPTION
 
-B<EARLY RELEASE. More commands coming soon.>
+B<EARLY RELEASE. More subcommands coming soon.>
 
 This is yet another Github CLI, written in Perl using the L<Perinci::CmdLine>
 framework and L<Net::GitHub::V3> API client.
