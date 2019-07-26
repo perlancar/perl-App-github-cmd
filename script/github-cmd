@@ -24,6 +24,7 @@ Perinci::CmdLine::github::cmd->new(
         'list-repos'  => {url => "${prefix}list_repos"},
         'create-repo' => {url => "${prefix}create_repo"},
         'delete-repo' => {url => "${prefix}delete_repo"},
+        'rename-repo' => {url => "${prefix}rename_repo"},
     },
 )->run;
 
@@ -66,6 +67,10 @@ configuration.
  0
 
  % github-cmd create-repo foo
+
+ % github-cmd delete-repo foo
+
+ % github-cmd rename-repo foo bar
 
 
 =head1 DESCRIPTION

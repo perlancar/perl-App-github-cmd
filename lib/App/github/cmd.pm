@@ -209,6 +209,31 @@ sub delete_repo {
     [200, "OK"];
 }
 
+$SPEC{rename_repo} = {
+    v => 1.1,
+    summary => 'Rename a repository',
+    args => {
+        %args_common,
+        %argopt_user,
+        %arg0_repo,
+        new_name => {
+            schema => 'str*',
+            req => 1,
+            pos => 1,
+        },
+    },
+};
+sub rename_repo {
+    my %args = @_;
+    my $state = _init(\%args);
+    my $github = $state->{github};
+
+    my $rp;
+
+    $rp = $github->repos->set_default_user_repo($args{user} // $args{login}, $args{repo});
+    $rp = $github->repos->update({ name => $args{new_name} });
+    [200, "OK", $rp];
+}
 
 1;
 # ABSTRACT:
