@@ -194,9 +194,19 @@ sub create_repo {
 
 $SPEC{delete_repo} = {
     v => 1.1,
+    args => {
+        %args_common,
+        %argopt_user,
+        %arg0_repo,
+    },
 };
 sub delete_repo {
-    [501, "Not yet implemented"];
+    my %args = @_;
+    my $state = _init(\%args);
+    my $github = $state->{github};
+
+    $github->repos->delete($args{user} // $args{login}, $args{repo});
+    [200, "OK"];
 }
 
 
