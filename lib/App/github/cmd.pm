@@ -30,7 +30,7 @@ our %args_common = (
     },
 );
 our %argsrels_common = (
-    req_all => [qw/login pass/],
+    choose_all => [qw/login pass/],
     req_one => [qw/login access_token/],
 );
 our %arg0_user = (
