@@ -90,6 +90,9 @@ $SPEC{get_user} = {
         %args_common,
         %argopt0_user,
     },
+    args_rels => {
+        %argsrels_common,
+    },
 };
 sub get_user {
     my %args = @_;
@@ -108,6 +111,9 @@ $SPEC{get_repo} = {
         %argopt_user,
         %arg0_repo,
     },
+    args_rels => {
+        %argsrels_common,
+    },
 };
 sub get_repo {
     my %args = @_;
@@ -125,6 +131,9 @@ $SPEC{repo_exists} = {
         %args_common,
         %argopt_user,
         %arg0_repo,
+    },
+    args_rels => {
+        %argsrels_common,
     },
 };
 sub repo_exists {
@@ -152,6 +161,9 @@ $SPEC{list_repos} = {
             default => 0,
         },
     },
+    args_rels => {
+        %argsrels_common,
+    },
 };
 sub list_repos {
     my %args = @_;
@@ -178,6 +190,9 @@ $SPEC{create_repo} = {
             schema => 'url*',
         },
     },
+    args_rels => {
+        %argsrels_common,
+    },
 };
 sub create_repo {
     my %args = @_;
@@ -198,6 +213,9 @@ $SPEC{delete_repo} = {
         %args_common,
         %argopt_user,
         %arg0_repo,
+    },
+    args_rels => {
+        %argsrels_common,
     },
 };
 sub delete_repo {
@@ -221,6 +239,9 @@ $SPEC{rename_repo} = {
             req => 1,
             pos => 1,
         },
+    },
+    args_rels => {
+        %argsrels_common,
     },
 };
 sub rename_repo {
