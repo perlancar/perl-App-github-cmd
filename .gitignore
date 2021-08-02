@@ -2,3 +2,4 @@ App-github-cmd-*
 .build
 *~
 nytprof*
+.DS_Store
