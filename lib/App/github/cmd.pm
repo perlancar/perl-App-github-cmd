@@ -1,12 +1,14 @@
 package App::github::cmd;
 
-# DATE
-# VERSION
-
 use 5.010001;
 use strict;
 use warnings;
 use Log::ger;
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
 
 our %SPEC;
 
